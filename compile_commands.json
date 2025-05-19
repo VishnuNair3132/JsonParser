@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Users/nairv/OneDrive/Desktop/Program/Cpp/Projects/JsonParser/.build",
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/nairv/OneDrive/Desktop/Program/Cpp/Projects/JsonParser/include -std=gnu++17 -o CMakeFiles\\JsonParser.dir\\CMakeFiles\\4.0.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp.obj -c C:\\Users\\nairv\\OneDrive\\Desktop\\Program\\Cpp\\Projects\\JsonParser\\.build\\CMakeFiles\\4.0.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp",
+  "file": "C:\\Users\\nairv\\OneDrive\\Desktop\\Program\\Cpp\\Projects\\JsonParser\\.build\\CMakeFiles\\4.0.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp",
+  "output": "CMakeFiles\\JsonParser.dir\\CMakeFiles\\4.0.1\\CompilerIdCXX\\CMakeCXXCompilerId.cpp.obj"
+},
+{
+  "directory": "C:/Users/nairv/OneDrive/Desktop/Program/Cpp/Projects/JsonParser/.build",
+  "command": "C:\\mingw64\\bin\\c++.exe -IC:/Users/nairv/OneDrive/Desktop/Program/Cpp/Projects/JsonParser/include -std=gnu++17 -o CMakeFiles\\JsonParser.dir\\jsonParser.cpp.obj -c C:\\Users\\nairv\\OneDrive\\Desktop\\Program\\Cpp\\Projects\\JsonParser\\jsonParser.cpp",
+  "file": "C:\\Users\\nairv\\OneDrive\\Desktop\\Program\\Cpp\\Projects\\JsonParser\\jsonParser.cpp",
+  "output": "CMakeFiles\\JsonParser.dir\\jsonParser.cpp.obj"
+}
+]
