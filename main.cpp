@@ -1,7 +1,6 @@
 
 
 #include "JsonParser.h"
-#include "JsonPrinter.h"
 #include <exception>
 #include <fstream>
 #include <iostream>
@@ -19,21 +18,16 @@ string readFile(const string &filename) {
 };
 
 int main() {
-  std::string jsonStr = R"({
-        "name": "John Doe",
-        "age": 30,
-        "isStudent": false,
-        "courses": ["Math", "Science"],
-        "address": {
-            "street": "123 Main St",
-            "city": "Anytown"},
-        "specialChars": "Line1\nLine2\tTab\"Quote\\Backslash"})";
+  cout << "Enter Json Filename: " << endl;
+  string fileName;
+  cin >> fileName;
+  string jsonStr = readFile(fileName);
   JsonParser parser(jsonStr);
   try {
     JsonValue value = parser.parse();
     cout << "Parsing successful!" << endl;
 
-    JsonPrinter::print(value);
+    cout << value;
     cout << "\n";
   } catch (const exception &e) {
     cerr << "Error: " << e.what() << endl;

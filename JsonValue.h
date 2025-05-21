@@ -2,7 +2,9 @@
 
 #include <cstddef>
 #include <map>
+#include <ostream>
 #include <string>
+#include <system_error>
 #include <vector>
 using namespace std;
 enum class JsonType { Object, Array, Number, String, Boolean, Null };
@@ -27,6 +29,9 @@ public:
   JsonValue &operator=(const JsonValue &other);
   JsonType getType() const;
 
+  friend std::ostream &operator<<(std::ostream &os, const JsonValue &value);
+  friend std::ostream &operator<<(std::ostream &os, const Object &obj);
+
   // getter
 
   const Object &asObject() const;
@@ -49,3 +54,5 @@ private:
     bool bool_;
   };
 };
+
+std::ostream &operator<<(std::ostream &out, const JsonValue &value);

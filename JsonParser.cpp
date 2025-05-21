@@ -1,5 +1,6 @@
 
 #include "JsonParser.h"
+#include "JsonValue.h"
 #include <iostream>
 using namespace std;
 
@@ -23,7 +24,6 @@ bool JsonParser::isSpace(char character) {
 char JsonParser::current() { return index < json.size() ? json[index] : '\0'; }
 
 void JsonParser::expect(char c) {
-  cout << "Expecting '" << c << "' at position " << index << endl;
   if (current() != c) {
     throw runtime_error(string("Expected '") + c + "' but got '" + current() +
                         "'");
@@ -113,16 +113,18 @@ JsonValue JsonParser::parserNumber() {
 JsonValue JsonParser::parserString() {
   expect('"');
   string str;
+  str.reserve(32); // Pre-allocate to prevent reallocations
 
   while (current() != '"') {
     if (current() == '\\') {
+      // Handle escape sequence
       index++;
       switch (current()) {
-      case '\\':
-        str += '\\';
-        break;
       case '"':
         str += '"';
+        break;
+      case '\\':
+        str += '\\';
         break;
       case '/':
         str += '/';
@@ -152,9 +154,8 @@ JsonValue JsonParser::parserString() {
     }
   }
   expect('"');
-  return JsonValue(str);
+  return JsonValue(str); // Create new JsonValue with the string
 }
-
 JsonValue JsonParser::parserArray() {
   expect('[');
   skipWhiteSpaces();
@@ -184,12 +185,15 @@ JsonValue JsonParser::parserObject() {
     while (true) {
 
       skipWhiteSpaces();
-      string key = parserString().asString();
+      JsonValue jsonVal = parserString();
+      string key = jsonVal.asString();
+
       skipWhiteSpaces();
       expect(':');
       skipWhiteSpaces();
       JsonValue obj = parserValue();
       object[key] = obj;
+      skipWhiteSpaces();
       if (current() == '}')
         break;
       expect(',');

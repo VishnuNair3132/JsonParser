@@ -1,5 +1,1 @@
-{
-firstname :"vishnu",
-lastname:"nair",
-age:"21"
-}
+{"users":[{"id":1,"name":"Alice","email":"alice@example.com","roles":["admin","editor"],"profile":{"age":30,"active":true,"address":{"street":"123 Maple St","city":"Metropolis","zipcode":"12345"}}},{"id":2,"name":"Bob","email":"bob@example.com","roles":["viewer"],"profile":{"age":25,"active":false,"address":{"street":"456 Oak St","city":"Gotham","zipcode":"67890"}}},{"id":3,"name":"Charlie","email":"charlie@example.com","roles":["editor","viewer"],"profile":{"age":35,"active":true,"address":{"street":"789 Pine St","city":"Star City","zipcode":"24680"}}}],"meta":{"generated_at":"2025-05-19T12:00:00Z","count":3},"config":{"theme":"dark","language":"en","features":{"beta":true,"tracking":false,"notifications":true}}}
